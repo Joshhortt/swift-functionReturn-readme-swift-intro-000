@@ -2,7 +2,7 @@ func printAge(name: String) {
     print("\(name) is 29")
 }
 
-printAge("Adam")
+printAge(name: "Adam")   // missing argument label in call -- adding 'name:' cleans up the error
 
 
 func happyBirthday(age: Int) {
@@ -23,15 +23,16 @@ func badGetAge(name: String) -> Int {
 
 
 let friend = "Emily"
-var friendAge = getAge(friend)
-happyBirthday(friendAge)
+var friendAge = getAge(name: friend)   // missing argument label in call - adding 'name:' between()cleans up the error
+
+happyBirthday(age: friendAge)   // missing argument label in call - adding 'age:' between()cleans up the error
 
 
 func birthdayGreeting(age: Int) -> String {
     return "Happy birthday #\(age)!"
 }
 
-var greeting = birthdayGreeting(30)
+var greeting = birthdayGreeting(age: 30) // missing argument label in call - adding 'age:' between()cleans up the error
 print(greeting)
 
 
@@ -42,4 +43,5 @@ func getAgeAndCongratulate(name: String) -> Int {
 }
 
 let friend2 = "Pete"
-var friend2Age = getAgeAndCongratulate(friend2)
+var friend2Age = getAgeAndCongratulate(name: friend2)
+// missing argument label in call - adding 'name:' between() cleans up the error
